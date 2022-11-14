@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP2.1_12</title>
+    <style>
+        input {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <input id="txtValue" type="text">
+    <input type="button" value="ADD" onclick="addToArray()">
+    <input type="button" value="DISPLAY" onclick="displayArray()">
+    <span id="result"></span>
+</body>
+
+<script>
+    let x = 0;
+    let array = Array();
+    function addToArray() {
+        array[x] = document.getElementById('txtValue').value;
+        alert("Elemet:" + " " + array[x] + " " + "Added at index" + " " + x)
+        x++;
+        document.getElementById("txtValue").value = "";
+    }
+
+    function displayArray() {
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++) {
+            e += "Element " + i + "=" + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e
+    }
+</script>
+</html>
